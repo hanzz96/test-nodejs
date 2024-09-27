@@ -57,13 +57,14 @@ exports.checkBody = (req, res, next) => {
 }
 
 exports.getAllIssues = (req, res) => {
+    const read = JSON.parse(fs.readFileSync(staticFileUrl))
     console.log(req.requestTime)
     res.status(200).json({
         status: 'Success',
         requestedAt: req.requestTime,
-        results: issues.length,
+        results: read.length,
         data: {
-            issues: issues,
+            issues: read,
         },
     })
 }
@@ -71,7 +72,8 @@ exports.getAllIssues = (req, res) => {
 exports.getIssue = (req, res) => {
     console.log(req.params, 'this is the param')
     const id = req.params.id * 1
-    const issueData = issues.find(x => {
+    const read = JSON.parse(fs.readFileSync(staticFileUrl))
+    const issueData = read.find(x => {
         return x.id === id
     })
 
