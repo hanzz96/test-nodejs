@@ -59,7 +59,7 @@ export default {
         email : this.$store.state.role,
         username : this.$store.state.user.username,
         menus: [
-          { title: 'Products', value: "/product", prependIcon: 'mdi-bottle-tonic-outline'},
+          { title: 'Issue', value: "/issue", prependIcon: 'mdi-bottle-tonic-outline'},
         ],
         rail: true,
       }

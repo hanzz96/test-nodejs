@@ -16,9 +16,9 @@ export const routes = {
       meta: { requiresAuth: true },
     },
     {
-      path: "/product/:id?",
-      name: "product",
-      component: () => import("@/views/Product/Landing.vue"),
+      path: "/issue/:id?",
+      name: "issue",
+      component: () => import("@/views/Issue/Landing.vue"),
       meta: { requiresAuth: true },
     },
   ],
